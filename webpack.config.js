@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 const merge = require('webpack-merge');
 const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
@@ -81,6 +82,32 @@ module.exports = function(env, argv) {
           new CleanPlugin([
             'build',
           ]),
+          new HtmlCriticalWebpackPlugin({
+            base: path.resolve(__dirname, 'build'),
+            src: 'index.html',
+            dest: 'index.html',
+            inline: true,
+            minify: true,
+            extract: true,
+            width: 375,
+            height: 565,
+            penthouse: {
+              blockJSRequests: false,
+            }
+          }),
+          new HtmlCriticalWebpackPlugin({
+            base: path.resolve(__dirname, 'build'),
+            src: 'blog.html',
+            dest: 'blog.html',
+            inline: true,
+            minify: true,
+            extract: true,
+            width: 375,
+            height: 565,
+            penthouse: {
+              blockJSRequests: false,
+            }
+          })
         ],
       },
       common,
