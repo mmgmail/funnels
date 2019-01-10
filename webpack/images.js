@@ -4,10 +4,10 @@ module.exports = function() {
     module: {
       rules: [
         {
-          test: /\.(png|jpg|gif|svg)$/i,
+          test: /\.(png|jpg|svg|gif|ico|eot|ttf|woff|woff2|otf)$/,
           loader: 'file-loader',
           options: {
-            name: 'images/[name].[ext]',
+            name: '[path][name].[ext]',
           },
         },
       ],

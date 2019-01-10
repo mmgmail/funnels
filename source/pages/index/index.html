@@ -1,13 +1,924 @@
-<!DOCTYPE html>
-<html lang="en">
+<html ng-app="gplans" class="ng-scope">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <!-- <meta content="width=device-width, initial-scale=1" name="viewport"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="" name="author">
+  <title ng-bind="pageTitle + ' | G-Plan'" class="ng-binding">Survey | G-Plan</title>
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <meta name="application-name" content="&nbsp;">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <!-- END FAVICONS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+  <!-- start Mixpanel -->
+  <!-- <script type="text/javascript" async="" src="https://widget.intercom.io/widget/nkg8poqg"></script>
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script async="" src="//amplify.outbrain.com/cp/obtp.js" type="text/javascript"></script>
+  <script async="" src="//cdn.taboola.com/libtrc/unip/1151015/tfa.js" id="tb_tfa_script"></script>
+  <script async="" src="//cdn.oribi.io/XzE4NzQxMzcxNzg/oribi.js" id="ORIBIscript"></script>
+  <script type="text/javascript" async="" src="https://cdn.heapanalytics.com/js/heap-2282205202.js"></script>
+  <script src="https://connect.facebook.net/signals/config/1669273739999383?v=2.8.37&amp;r=stable" async=""></script>
+  <script src="https://connect.facebook.net/signals/config/708517899332574?v=2.8.37&amp;r=stable" async=""></script>
+  <script src="https://connect.facebook.net/signals/config/694541010756428?v=2.8.37&amp;r=stable" async=""></script>
+  <script src="https://connect.facebook.net/signals/config/1080118982019549?v=2.8.37&amp;r=stable" async=""></script>
+  <script async="" src="//connect.facebook.net/en_US/fbevents.js"></script>
+  <script type="text/javascript" async="" src="//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/6036.js?429758"></script>
+  <script type="text/javascript" async="" src="https://s.adroll.com/j/roundtrip.js"></script>
+  <script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-PL87JC"></script>
+  <script async="" src="//www.google-analytics.com/analytics.js"></script>
+  <script type="text/javascript" async="" src="//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+  <script type="text/javascript"> -->
+    <!-- <![CDATA[
+    <!-- -->
+    <!-- (function(c, a) {
+      if (!a.__SV) {
+        var b = window;
+        try {
+          var d, m, j, k = b.location,
+            f = k.hash;
+          d = function(a, b) {
+            return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null
+          };
+          f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search)))
+        } catch (n) {}
+        var l, h;
+        window.mixpanel = a;
+        a._i = [];
+        a.init = function(b, d, g) {
+          function c(b, i) {
+            var a = i.split(".");
+            2 == a.length && (b = b[a[0]], i = a[1]);
+            b[i] = function() {
+              b.push([i].concat(Array.prototype.slice.call(arguments,
+                0)))
+            }
+          }
+          var e = a;
+          "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel";
+          e.people = e.people || [];
+          e.toString = function(b) {
+            var a = "mixpanel";
+            "mixpanel" !== g && (a += "." + g);
+            b || (a += " (stub)");
+            return a
+          };
+          e.people.toString = function() {
+            return e.toString(1) + ".people (stub)"
+          };
+          l =
+            "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove"
+            .split(" ");
+          for (h = 0; h < l.length; h++) c(e, l[h]);
+          var f = "set set_once union unset remove delete".split(" ");
+          e.get_group = function() {
+            function a(c) {
+              b[c] = function() {
+                call2_args = arguments;
+                call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                e.push([d, call2])
+              }
+            }
+            for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++) a(f[c]);
+            return b
+          };
+          a._i.push([b, d, g])
+        };
+        a.__SV = 1.2;
+        b = c.createElement("script");
+        b.type = "text/javascript";
+        b.async = !0;
+        b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+          MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";
+        d = c.getElementsByTagName("script")[0];
+        d.parentNode.insertBefore(b, d)
+      }
+    })(document, window.mixpanel || []);
+    mixpanel.init("9628f1623ed52031b8dad4cceffcf84c"); -->
+    <!-- ]]> -->
+  <!-- </script> -->
+  <!-- end Mixpanel -->
+
+
+  <!-- google analytics -->
+  <!-- <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-72058812-1', 'auto');
+    ga('create', 'UA-72058812-3', 'auto', 'masterTracker');
+    // ga('require', 'GTM-P6PGJXK');
+    ga('send', 'pageview');
+  </script> -->
+
+  <!-- Hotjar Tracking Code for https://goglianutrition.com/ -->
+  <!-- <script>
+    (function(h, o, t, j, a, r) {
+      h.hj = h.hj || function() {
+        (h.hj.q = h.hj.q || []).push(arguments)
+      };
+      h._hjSettings = {
+        hjid: 472677,
+        hjsv: 5
+      };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script');
+      r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      r.crossOrigin = "anonymous";
+      a.appendChild(r);
+    })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+  <script async="" src="//static.hotjar.com/c/hotjar-472677.js?sv=5" crossorigin="anonymous"></script> -->
+
+  <!-- Intercom preload -->
+  <!-- <script>
+    (function() {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+      } else {
+        var d = document;
+        var i = function() {
+          i.c(arguments)
+        };
+        i.q = [];
+        i.c = function(args) {
+          i.q.push(args)
+        };
+        w.Intercom = i;
+
+        function l() {
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'https://widget.intercom.io/widget/nkg8poqg';
+          var x = d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+        if (w.attachEvent) {
+          w.attachEvent('onload', l);
+        } else {
+          w.addEventListener('load', l, false);
+        }
+      }
+    })()
+  </script> -->
+  <!-- end analytics -->
+
+  <!-- amazon payment DISABLED -->
+
+  <!-- end amazon payment -->
+
+  <!-- <script async="" src="https://script.hotjar.com/modules-27da28df520762f53faa377587187f3a.js"></script> -->
+
+  <!-- <style type="text/css">
+    iframe#_hjRemoteVarsFrame {
+      display: none !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  </style>
+
+  <style type="text/css"></style>
+  <style type="text/css">
+    .fb_hidden {
+      position: absolute;
+      top: -10000px;
+      z-index: 10001
+    }
+
+    .fb_reposition {
+      overflow: hidden;
+      position: relative
+    }
+
+    .fb_invisible {
+      display: none
+    }
+
+    .fb_reset {
+      background: none;
+      border: 0;
+      border-spacing: 0;
+      color: #000;
+      cursor: auto;
+      direction: ltr;
+      font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      text-align: left;
+      text-decoration: none;
+      text-indent: 0;
+      text-shadow: none;
+      text-transform: none;
+      visibility: visible;
+      white-space: normal;
+      word-spacing: normal
+    }
+
+    .fb_reset>div {
+      overflow: hidden
+    }
+
+    @keyframes fb_transform {
+      from {
+        opacity: 0;
+        transform: scale(.95)
+      }
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .fb_animate {
+      animation: fb_transform .3s forwards
+    }
+
+    .fb_dialog {
+      background: rgba(82, 82, 82, .7);
+      position: absolute;
+      top: -10000px;
+      z-index: 10001
+    }
+
+    .fb_dialog_advanced {
+      border-radius: 8px;
+      padding: 10px
+    }
+
+    .fb_dialog_content {
+      background: #fff;
+      color: #373737
+    }
+
+    .fb_dialog_close_icon {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+      cursor: pointer;
+      display: block;
+      height: 15px;
+      position: absolute;
+      right: 18px;
+      top: 17px;
+      width: 15px
+    }
+
+    .fb_dialog_mobile .fb_dialog_close_icon {
+      left: 5px;
+      right: auto;
+      top: 5px
+    }
+
+    .fb_dialog_padding {
+      background-color: transparent;
+      position: absolute;
+      width: 1px;
+      z-index: -1
+    }
+
+    .fb_dialog_close_icon:hover {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+    }
+
+    .fb_dialog_close_icon:active {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+    }
+
+    .fb_dialog_iframe {
+      line-height: 0
+    }
+
+    .fb_dialog_content .dialog_title {
+      background: #6d84b4;
+      border: 1px solid #365899;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0
+    }
+
+    .fb_dialog_content .dialog_title>span {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+      float: left;
+      padding: 5px 0 7px 26px
+    }
+
+    body.fb_hidden {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      overflow: visible;
+      position: absolute;
+      top: -10000px;
+      transform: none;
+      width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+      min-height: 100%;
+      min-width: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      z-index: 10001
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered {
+      background: none;
+      height: auto;
+      min-height: initial;
+      min-width: initial;
+      width: auto
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+      width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+      background: none
+    }
+
+    .loading.centered #fb_dialog_loader_close {
+      clear: both;
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      padding-top: 20px
+    }
+
+    #fb-root #fb_dialog_ipad_overlay {
+      background: rgba(0, 0, 0, .4);
+      bottom: 0;
+      left: 0;
+      min-height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 10000
+    }
+
+    #fb-root #fb_dialog_ipad_overlay.hidden {
+      display: none
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading iframe {
+      visibility: hidden
+    }
+
+    .fb_dialog_mobile .fb_dialog_iframe {
+      position: sticky;
+      top: 0
+    }
+
+    .fb_dialog_content .dialog_header {
+      background: linear-gradient(from(#738aba), to(#2c4987));
+      border-bottom: 1px solid;
+      border-color: #1d3c78;
+      box-shadow: white 0 1px 1px -1px inset;
+      color: #fff;
+      font: bold 14px Helvetica, sans-serif;
+      text-overflow: ellipsis;
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+      vertical-align: middle;
+      white-space: nowrap
+    }
+
+    .fb_dialog_content .dialog_header table {
+      height: 43px;
+      width: 100%
+    }
+
+    .fb_dialog_content .dialog_header td.header_left {
+      font-size: 12px;
+      padding-left: 5px;
+      vertical-align: middle;
+      width: 60px
+    }
+
+    .fb_dialog_content .dialog_header td.header_right {
+      font-size: 12px;
+      padding-right: 5px;
+      vertical-align: middle;
+      width: 60px
+    }
+
+    .fb_dialog_content .touchable_button {
+      background: linear-gradient(from(#4267B2), to(#2a4887));
+      background-clip: padding-box;
+      border: 1px solid #29487d;
+      border-radius: 3px;
+      display: inline-block;
+      line-height: 18px;
+      margin-top: 3px;
+      max-width: 85px;
+      padding: 4px 12px;
+      position: relative
+    }
+
+    .fb_dialog_content .dialog_header .touchable_button input {
+      background: none;
+      border: none;
+      color: #fff;
+      font: bold 12px Helvetica, sans-serif;
+      margin: 2px -12px;
+      padding: 2px 6px 3px 6px;
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog_content .dialog_header .header_center {
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 18px;
+      text-align: center;
+      vertical-align: middle
+    }
+
+    .fb_dialog_content .dialog_content {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+      border: 1px solid #4a4a4a;
+      border-bottom: 0;
+      border-top: 0;
+      height: 150px
+    }
+
+    .fb_dialog_content .dialog_footer {
+      background: #f5f6f7;
+      border: 1px solid #4a4a4a;
+      border-top-color: #ccc;
+      height: 40px
+    }
+
+    #fb_dialog_loader_close {
+      float: left
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+      visibility: hidden
+    }
+
+    #fb_dialog_loader_spinner {
+      animation: rotateSpinner 1.2s linear infinite;
+      background-color: transparent;
+      background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      height: 24px;
+      width: 24px
+    }
+
+    @keyframes rotateSpinner {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    .fb_iframe_widget {
+      display: inline-block;
+      position: relative
+    }
+
+    .fb_iframe_widget span {
+      display: inline-block;
+      position: relative;
+      text-align: justify
+    }
+
+    .fb_iframe_widget iframe {
+      position: absolute
+    }
+
+    .fb_iframe_widget_fluid_desktop,
+    .fb_iframe_widget_fluid_desktop span,
+    .fb_iframe_widget_fluid_desktop iframe {
+      max-width: 100%
+    }
+
+    .fb_iframe_widget_fluid_desktop iframe {
+      min-width: 220px;
+      position: relative
+    }
+
+    .fb_iframe_widget_lift {
+      z-index: 1
+    }
+
+    .fb_iframe_widget_fluid {
+      display: inline
+    }
+
+    .fb_iframe_widget_fluid span {
+      width: 100%
+    }
+  </style> -->
+
+
+  <!-- <script type="text/javascript" src="https://d.adroll.com/consent/check/SMLS4BT3UJCY3CUCTD2NKN?_s=9a8e1bd9e126c95610b10e5814b9d320"></script>
+  <script async="true" type="text/javascript" src="https://d.adroll.com/pixel/SMLS4BT3UJCY3CUCTD2NKN/W3PGIJYMA5FYRLAC442O6L?adroll_fpc=9bf3d0db4a9a19300974540a9c514051&amp;pv=71480654021.89246&amp;cookie=&amp;adroll_s_ref=&amp;keyw=&amp;arrfrr=https%3A%2F%2Fg-plans.com%2Fapp%2Fsurvey%2Fstart-quiz"></script>
+  <script type="text/javascript" src="//s.adroll.com/j/sendrolling.js"></script> -->
+  <!-- <div style="width: 1px; height: 1px; display: inline; position: absolute;"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/aol/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/index/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+    <img
+      height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/n/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/outbrain/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/pubmatic/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+      <img
+        height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/taboola/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/triplelift/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN"></div>
+  <div style="width: 1px; height: 1px; display: inline; position: absolute;"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/r/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/b/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/x/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/l/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/o/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN">
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/g/out?advertisable=SMLS4BT3UJCY3CUCTD2NKN&amp;google_nid=adroll5">
+  </div> -->
 </head>
-<body>
-  <h1>Index <span>Green</span></h1>
-  <img src="./images/webpack.png" alt="">
+
+<body ng-class="{'login-bg': loginPage}" cz-shortcut-listen="true">
+  <!-- <div id="fb-root" class=" fb_reset">
+    <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+      <div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/j-GHT1gpo6-.js?version=43#channel=f27d4ae708fbbc&amp;origin=https%3A%2F%2Fg-plans.com"
+          style="border: none;"></iframe></div>
+      <div></div>
+    </div>
+  </div> -->
+  <!-- uiView: -->
+  <div ui-view="" class="ng-scope" style="">
+    <!-- uiView: -->
+    <div class="ui-view ng-scope">
+
+      <div class="fluid-container ng-scope">
+        <nav class="navbar navbar-default" style="background-color:rgba(255,255,255,0.7)">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+              <a class="navbar-brand survey-brand" href="#">Goglia Nutrition</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <div>
+                <button ng-show="vm.user &amp;&amp; !quizChanged &amp;&amp; offerId != 'straightSale'" class="btn btn-danger results-btn right ng-hide" style="text-align: center;margin-top: 10px;" ng-click="vm.seeResults()">SEE MY RESULTS</button>
+                <button ng-show="vm.user &amp;&amp; quizChanged &amp;&amp; offerId != 'straightSale'" class="btn btn-danger results-btn right ng-hide" style="text-align: center;margin-top: 10px;" ng-click="vm.finishSurvey()">RECALCULATE QUIZ</button>
+              </div>
+              <!--ul class="nav navbar-nav navbar-right survey-right-nav">
+
+           <li><a href="#">Sign In</a></li>
+            <li><a href="#" class="btn btn-md btn-danger join bold">Join Now</a></li>
+
+          </ul-->
+
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </div>
+
+
+      <div style="padding-bottom: 40px;" class="container ng-scope">
+        <span us-spinner="{radius:20, width:2, length: 16, top: '100px'}" spinner-on="!vm.question" class="ng-scope"></span>
+        <div class="row" ng-show="vm.question">
+          <div class="col-sm-6 col-sm-offset-3 survey-question">
+
+            <div class="progress-wrap">
+              <div class="center quiz-sub ng-binding">Question 1/14</div>
+              <div id="progressKeeper">
+                <div id="progress" ng-style="vm.progressStyle" style="width: 7.14286%;"></div>
+              </div>
+            </div>
+
+            <h1 class="center m-b-0 main-question" gplans-compile="vm.question.question">How you sleep at night tells me a lot about  your efficiency levels. Is your sleep restful?</h1>
+            <h3 class="survey-description center ng-binding"></h3>
+
+            <img ng-src="https://gplans-static.storage.googleapis.com/media/survey/images/2018/06/16/q1.png" class="center-margin p-a quiz-icon-survey quiz-non-icon" src="https://gplans-static.storage.googleapis.com/media/survey/images/2018/06/16/q1.png">
+            <form name="vm.questionForm" class="ng-pristine ng-valid">
+              <ul class="answer-list">
+                <!-- ngRepeat: choice in vm.question.choices -->
+                <li ng-repeat="choice in vm.question.choices" ng-class="{active: vm.answer.answer_choice==choice.id || (choice.checked &amp;&amp; choice.id != 41)}" class="ng-scope">
+                  <label class="ng-binding">
+
+              <!-- todo:refactor hardcode -->
+              <!-- ngIf: vm.questionNumber == '14' && choice.id != 41 -->
+
+              <!-- ngIf: !(vm.questionNumber == '14' && choice.id != 41) --><input ng-if="!(vm.questionNumber == '14' &amp;&amp; choice.id != 41)" type="radio" ng-click="vm.submitAnswer(choice)" name="answer_choice" ng-value="choice.id" ng-model="vm.answer.answer_choice" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" value="1"><!-- end ngIf: !(vm.questionNumber == '14' && choice.id != 41) -->
+
+              Pretty good. I wake up feeling refreshed.
+            </label>
+                </li>
+                <!-- end ngRepeat: choice in vm.question.choices -->
+                <li ng-repeat="choice in vm.question.choices" ng-class="{active: vm.answer.answer_choice==choice.id || (choice.checked &amp;&amp; choice.id != 41)}" class="ng-scope">
+                  <label class="ng-binding">
+
+              <!-- todo:refactor hardcode -->
+              <!-- ngIf: vm.questionNumber == '14' && choice.id != 41 -->
+
+              <!-- ngIf: !(vm.questionNumber == '14' && choice.id != 41) --><input ng-if="!(vm.questionNumber == '14' &amp;&amp; choice.id != 41)" type="radio" ng-click="vm.submitAnswer(choice)" name="answer_choice" ng-value="choice.id" ng-model="vm.answer.answer_choice" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" value="2"><!-- end ngIf: !(vm.questionNumber == '14' && choice.id != 41) -->
+
+              Restless. I usually wake up one or more times during the night and regularly have trouble falling asleep or staying asleep.
+            </label>
+                </li>
+                <!-- end ngRepeat: choice in vm.question.choices -->
+                <li ng-repeat="choice in vm.question.choices" ng-class="{active: vm.answer.answer_choice==choice.id || (choice.checked &amp;&amp; choice.id != 41)}" class="ng-scope">
+                  <label class="ng-binding">
+
+              <!-- todo:refactor hardcode -->
+              <!-- ngIf: vm.questionNumber == '14' && choice.id != 41 -->
+
+              <!-- ngIf: !(vm.questionNumber == '14' && choice.id != 41) --><input ng-if="!(vm.questionNumber == '14' &amp;&amp; choice.id != 41)" type="radio" ng-click="vm.submitAnswer(choice)" name="answer_choice" ng-value="choice.id" ng-model="vm.answer.answer_choice" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" value="3"><!-- end ngIf: !(vm.questionNumber == '14' && choice.id != 41) -->
+
+              I toss and turn and/or can’t shut my mind off (difficulty falling asleep)
+            </label>
+                </li>
+                <!-- end ngRepeat: choice in vm.question.choices -->
+              </ul>
+            </form>
+            <div class="row">
+              <div class="col-xs-6">
+                <a ng-hide="vm.questionNumber==1" style="text-decoration: underline" ng-click="vm.prevQuestion()" class="ng-hide">Previous</a>
+              </div>
+              <div class="col-xs-6">
+                <!-- todo:refactor hardcode -->
+                <a ng-disabled="!vm.answer.answer_choice" ng-hide="!vm.user || vm.questionNumber>=vm.quizLen" style="text-decoration: underline" class="right ng-hide" ng-click="vm.nextQuestion()" disabled="disabled">Next</a>
+                <!-- ngIf: vm.questionNumber == 14 -->
+                <!--<button ng-disabled="!vm.answer.answer_choice" ng-show="vm.questionNumber>=vm.quizLen" class="btn btn-block btn-lg btn-danger m-t right" ng-click="vm.submitAnswer(vm.finishSurvey)"><span ng-show="vm.submitting">Saving</span><span ng-hide="vm.submitting">Finish</span></button>-->
+                <!--<a ng-show="vm.user" style="text-decoration: underline" ng-click="vm.finishSurvey()">Reassess Quiz</a>-->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <br clear="both" class="ng-scope">
+    </div>
+    <div class="clearfix ng-scope" style="
+    margin-bottom: 20px;
+"></div>
+    <!--<ng-include src="templates/layout/footer.html'"></ng-include>-->
+  </div>
+  <!--MODAL-->
+  <div aria-labelledby="myModalLabel" class="modal fade" id="docsModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">Exchange list:</h4>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tbody>
+              <tr>
+                <td>Apple</td>
+                <td>1 item</td>
+                <td><button class="btn">Select</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-dismiss="modal" type="button">Cool, got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--MODAL-->
+  <div class="modal bottom-sheet" id="modal1">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <table>
+        <tbody>
+          <tr>
+            <td>food 1</td>
+            <td>amount</td>
+            <td>
+              <a class=" modal-action modal-close waves-effect waves-green btn-flat" href="#!">Agree</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat" href="#!">Agree</a>
+    </div>
+  </div>
+
+  <!--FACEBOOK-->
+  <!-- <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script> -->
+  <!-- <div id="ads"></div> -->
+
+  <!-- <script src="https://js.recurly.com/v4/recurly.js"></script>
+  <link href="https://js.recurly.com/v4/recurly.css" rel="stylesheet" type="text/css"> -->
+
+  <!-- Raven and FireBase initialization MOVED TO VENDOR -->
+  <!-- Google Tag Manager -->
+  <!-- <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PL87JC"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PL87JC');
+  </script> -->
+  <!-- End Google Tag Manager -->
+
+  <!-- Optional global configuration file -->
+  <!-- <script type="text/javascript" src="/app/conf.js"></script>
+
+
+  <script type="text/javascript">
+    recurly.configure(window.gplansConf.RecurlyPublicKey);
+  </script> -->
+
+  <!-- <script type="text/javascript" src="/app/dist/js/runtime~main-6249e777027db8867f35.js"></script>
+  <script type="text/javascript" src="/app/dist/js/runtime~vendor-7024548f69120252ebbf.js"></script>
+  <script type="text/javascript" src="/app/chunk-dist/js/vendors~main-e18b5a1412d3ededcaeb.js"></script>
+  <script type="text/javascript" src="/app/chunk-dist/js/vendors~vendor-9ff0ff4a3ddb2c0eb1fc.js"></script>
+  <script type="text/javascript" src="/app/chunk-dist/js/vendor-4fb7731a514f5359bff0.js"></script>
+  <script type="text/javascript" src="/app/chunk-dist/js/main-0d575a068f63004d0efa.js"></script> -->
+
+  <!-- <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+  <div class="hiddendiv common"></div>
+  <div id="snackbar-container"></div>
+  <script type="text/javascript" id="">
+    ! function(b, e, f, g, a, c, d) {
+      b.fbq || (a = b.fbq = function() {
+        a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+      }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+    }(window, document, "script", "//connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "1080118982019549");
+    fbq("track", "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1080118982019549&amp;ev=PageView&amp;noscript=1"></noscript>
+  <div style="display: none; visibility: hidden;">
+    <script type="text/javascript">
+      (function(c) {
+        console.log("Heap is loading...");
+        c.heap = c.heap || [];
+        heap.load = function(f, e) {
+          c.heap.appid = f;
+          c.heap.config = e = e || {};
+          var a = e.forceSSL || "https:" === document.location.protocol,
+            b = document.createElement("script");
+          b.type = "text/javascript";
+          b.async = !0;
+          b.src = (a ? "https:" : "http:") + "//cdn.heapanalytics.com/js/heap-" + f + ".js";
+          a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(b, a);
+          b = function(a) {
+            return function() {
+              heap.push([a].concat(Array.prototype.slice.call(arguments, 0)))
+            }
+          };
+          a = "addEventProperties addUserProperties clearEventProperties identify removeEventProperty setEventProperties track unsetEventProperty".split(" ");
+          for (var d = 0; d < a.length; d++) heap[a[d]] = b(a[d])
+        };
+        heap.load("2282205202")
+      })(window);
+    </script>
+  </div>
+  <meta property="fb:pages" content="1660058167586809">
+  <script type="text/javascript" id="">
+    ! function(b, e, f, g, a, c, d) {
+      b.fbq || (a = b.fbq = function() {
+        a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+      }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "694541010756428");
+    fbq("track", "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=694541010756428&amp;ev=PageView&amp;noscript=1"></noscript>
+
+  <script type="text/javascript" id="">
+    (function(c, f, d, g, b, a, e) {
+      c[b] || (c[b] = {}, c[b].scriptToken = "XzE4NzQxMzcxNzg", a = f.createElement(d), e = f.getElementsByTagName(d)[0], a.async = 1, a.src = g, a.id = b + d, e.parentNode.insertBefore(a, e))
+    })(window, document, "script", "//cdn.oribi.io/XzE4NzQxMzcxNzg/oribi.js", "ORIBI");
+  </script>
+  <script type="text/javascript" id="">
+    ! function(b, e, f, g, a, c, d) {
+      b.fbq || (a = b.fbq = function() {
+        a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+      }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "708517899332574");
+    fbq("track", "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=708517899332574&amp;ev=PageView&amp;noscript=1"></noscript>
+
+  <div style="display: none; visibility: hidden;">
+    <script>
+      function readCookie(a) {
+        a += "\x3d";
+        for (var c = document.cookie.split(/;\s*/), b = c.length - 1; 0 <= b; b--)
+          if (!c[b].indexOf(a)) return c[b].replace(a, "")
+      }
+      var gaUserCookie = readCookie("_ga");
+      if (void 0 != gaUserCookie) {
+        var cookieValues = gaUserCookie.split(".");
+        if (2 < cookieValues.length) {
+          var userId = cookieValues[2];
+          try {
+            ga("set", "dimension1", userId), ga("send", "event", "Custom Variables", "Set UserId", {
+              nonInteraction: 1
+            })
+          } catch (a) {}
+        }
+      };
+    </script>
+  </div>
+  <script type="text/javascript" id="">
+    window._tfa = window._tfa || [];
+    window._tfa.push({
+      notify: "event",
+      name: "page_view"
+    });
+    ! function(a, b, d, c) {
+      document.getElementById(c) || (a.async = 1, a.src = d, a.id = c, b.parentNode.insertBefore(a, b))
+    }(document.createElement("script"), document.getElementsByTagName("script")[0], "//cdn.taboola.com/libtrc/unip/1151015/tfa.js", "tb_tfa_script");
+  </script>
+  <noscript>
+  <img src="//trc.taboola.com/1151015/log/3/unip?en=page_view" width="0" height="0" style="display:none">
+</noscript>
+  <script type="text/javascript" id="">
+    ! function(d, e) {
+      var b = "009483ddc29f143620499b074ccc2a961c";
+      if (d.obApi) {
+        var c = function(a) {
+          return "[object Array]" === Object.prototype.toString.call(a) ? a : [a]
+        };
+        d.obApi.marketerId = c(d.obApi.marketerId).concat(c(b))
+      } else {
+        var a = d.obApi = function() {
+          a.dispatch ? a.dispatch.apply(a, arguments) : a.queue.push(arguments)
+        };
+        a.version = "1.1";
+        a.loaded = !0;
+        a.marketerId = b;
+        a.queue = [];
+        b = e.createElement("script");
+        b.async = !0;
+        b.src = "//amplify.outbrain.com/cp/obtp.js";
+        b.type = "text/javascript";
+        c = e.getElementsByTagName("script")[0];
+        c.parentNode.insertBefore(b, c)
+      }
+    }(window, document);
+    obApi("track", "PAGE_VIEW");
+  </script>
+  <iframe style="border: 0 none;height: 0;margin: 0;padding: 0;position: absolute;visibility: hidden;width: 0;"></iframe><iframe id="intercom-frame" style="display: none;"></iframe>
+  <div id="intercom-container" style="position: fixed; width: 0px; height: 0px; bottom: 0px; right: 0px; z-index: 2147483647; display: none;"></div> -->
 </body>
+
 </html>
