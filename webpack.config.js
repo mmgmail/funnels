@@ -25,7 +25,7 @@ const common = merge([
   {
     entry: {
       'index': PATHS.source + '/pages/index/index.js',
-      'blog': PATHS.source + '/pages/blog/blog.js',
+      'question': PATHS.source + '/pages/question/question.js',
     },
     output: {
       path: PATHS.build,
@@ -42,9 +42,9 @@ const common = merge([
         template: PATHS.source + '/pages/index/index.html',
       }),
       new HtmlWebpackPlugin({
-        filename: 'blog.html',
-        chunks: ['blog', 'common'],
-        template: PATHS.source + '/pages/blog/blog.html',
+        filename: 'question.html',
+        chunks: ['question', 'common'],
+        template: PATHS.source + '/pages/question/question.html',
       }),
       new CopyWebpackPlugin([
   			{from: 'source/pages/**/images/*.*', to: 'images', flatten: true}, // legacy, need for AngularJS 'ng-src' attribute work properly
@@ -97,8 +97,8 @@ module.exports = function(env, argv) {
           }),
           new HtmlCriticalWebpackPlugin({
             base: path.resolve(__dirname, 'build'),
-            src: 'blog.html',
-            dest: 'blog.html',
+            src: 'question.html',
+            dest: 'question.html',
             inline: true,
             minify: true,
             extract: true,
