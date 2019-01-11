@@ -17,6 +17,20 @@
   position: absolute;
 }
 
+.fadein {
+  animation-name: fadein;
+  animation-duration: 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
 	padding-top: 0px !important;
 	background-image: url(./images/bg_reg2.jpg);

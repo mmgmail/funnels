@@ -17,6 +17,9 @@
   <!-- END FAVICONS -->
   <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+  <link rel="preconnect" href="https://raw.githubusercontent.com/" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com/" crossorigin>
 </head>
 
 <body>
@@ -26,19 +29,19 @@
     <div class="ui-view ng-scope">
 
       <!-- ngInclude: -->
-      <div class="ng-scope" src="'templates/survey/hurry-timer-retarget.html'">
+      <div class="ng-scope" data-src="'templates/survey/hurry-timer-retarget.html'">
         <!-- ngIf: !vm.alreadySubscribed -->
         <div ng-if="!vm.alreadySubscribed" style="position:relative; background-color:#ffd300; padding-top:5px;" class="ng-scope">
           <div class="container" style="background:none; box-shadow:none;">
             <p class="text-center --text-uppercase" style="font-size: 14px; color: #555555; margin: 5px 0 10px 0; max-width: 100%; vertical-align: middle;">
-              <img src="images/imgl1/alert123.png" class="hidden-xs" alt="" width="28">
+              <img data-src="images/imgl1/alert123.png" class="hidden-xs" alt="" width="28">
 
               <b>Welcome Back!!!</b> Your quiz results and fat burning program have been saved for you on our servers. All you have to do if take the next step and join us!
 
               <b>Join us today &amp; we'll throw in Dr. Goglia's full
               <big class="badge red">Power Bundle  (valued at $99) absolutely FREE!</big></b>
             </p>
-            <img src="./images/timer-image.png" style="margin: 0 auto;display: block;">
+            <img data-src="./images/timer-image.png" style="margin: 0 auto;display: block;">
           </div>
         </div>
         <!-- end ngIf: !vm.alreadySubscribed -->
@@ -47,7 +50,7 @@
       <div class="container ng-scope">
 
         <div class="row">
-          <img src="images/side-bar-4@2x.png" class="width-100 visible-xs-block">
+          <img data-src="images/side-bar-4@2x.png" class="width-100 visible-xs-block">
           <div class="right-col-checkout check-form-wrap col-sm-4 summary-1 col-sm-push-8">
 
             <ul class="checkout-side-bar p-a hidden-xs">
@@ -69,18 +72,18 @@
               <div class="side-test">
                 "After I found out I was <b class="ng-binding"></b>, I just followed Dr.G’s plan for my body...
                 <b class="ng-binding">I lost 15 lbs in the first 2 months</b>...and still going!"<sup> *</sup><br>
-                <img src="./images/test1.png" class="desk-test"> Judy M.<br><span>3rd grade teacher</span>
+                <img data-src="./images/test1.png" class="desk-test"> Judy M.<br><span>3rd grade teacher</span>
               </div>
 
               <div class="side-test m-t">
                 "It is amazing that eating for my <b class="ng-binding"></b> body, made such a HUGE difference for my weight. <b class="ng-binding">My digestive issues are totally gone and I lost 8 lbs within the first month</b>"<sup> *</sup><br>
-                <img src="./images/test2.png" class="desk-test"> Sarah T.<br><span class="occ">Accountant</span>
+                <img data-src="./images/test2.png" class="desk-test"> Sarah T.<br><span class="occ">Accountant</span>
               </div>
 
               <div class="side-test m-t">
                 "At first I have to admit, I had my doubts… I took the quiz and was diagnosed as
                 <b class="ng-binding">. But the proof is in the results. Down 12 lbs already! Thanks G-Plans.</b>"<sup> *</sup><br>
-                <img src="./images/test3.png" class="desk-test"> Tim R.<br><span class="occ">Postal Service Worker</span>
+                <img data-src="./images/test3.png" class="desk-test"> Tim R.<br><span class="occ">Postal Service Worker</span>
               </div>
 
             </ul>
@@ -89,7 +92,7 @@
 
           <!-- ngIf: !vm.alreadySubscribed -->
           <div ng-if="!vm.alreadySubscribed" class="col-sm-8 mobile-no-pad bg-wrap-1 col-sm-pull-4 ng-scope">
-            <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+            <script type="text/javascript" data-src="https://js.stripe.com/v2/"></script>
 
             <form id="vm.paymentForm" name="vm.paymentForm" ng-submit="vm.submit()" class="ng-pristine ng-invalid ng-invalid-required ng-invalid-cc-number ng-invalid-cc-number-type ng-invalid-cc-cvc ng-invalid-cc-exp-month ng-invalid-cc-exp-year ng-invalid-cc-exp">
               <!-- ngIf: !vm.plan || vm.orderSubmitting -->
@@ -98,31 +101,31 @@
               <!-- New Block -->
               <div class="new">
                 <h3 class="text-o m-t text-center ng-binding">THOUSANDS of Clients. 150,000+ Pounds Lost. ... It’s Your Turn!<sup>*</sup></h3>
-                <img src="images/comback_to_sale/users.png" class="m-t center" width="100%" vspace="10">
+                <img data-src="images/comback_to_sale/users.png" class="m-t center" width="100%" vspace="10">
 
                 <h3 class="text-o m-t text-center ng-binding">Here’s Your  Metabolic Plan Targeting 0 Pounds of Weight Loss! ZERO Risk. Results Guaranteed.</h3>
 
                 <h4 class="list-group-header m-t-md"><span>Your plan includes</span></h4>
                 <ul class="list-group">
-                  <li><img src="images/comback_to_sale/plan-icon-1.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-1.svg" alt="" width="50" height="50">
                     <p><b>7-day metabolic meal plans</b>, updated weekly</p>
                   </li>
-                  <li><img src="images/comback_to_sale/plan-icon-2.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-2.svg" alt="" width="50" height="50">
                     <p>“<b>Love what you eat</b>” easy-swap system</p>
                   </li>
-                  <li><img src="images/comback_to_sale/plan-icon-3.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-3.svg" alt="" width="50" height="50">
                     <p><b>No points</b>, no counting simplicity</p>
                   </li>
-                  <li><img src="images/comback_to_sale/plan-icon-4.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-4.svg" alt="" width="50" height="50">
                     <p><b>Motivational tracking tools</b>, web + mobile app</p>
                   </li>
-                  <li><img src="images/comback_to_sale/plan-icon-5.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-5.svg" alt="" width="50" height="50">
                     <p><b>Weekly video</b> coaching from me! </p>
                   </li>
-                  <li><img src="images/comback_to_sale/plan-icon-6.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-6.svg" alt="" width="50" height="50">
                     <p><b>Fitness plan</b> <span class="text-muted">(optional freebie)</span></p>
                   </li>
-                  <li><img src="images/comback_to_sale/plan-icon-7.svg" alt="" width="50" height="50">
+                  <li><img data-src="images/comback_to_sale/plan-icon-7.svg" alt="" width="50" height="50">
                     <p><b class="ng-binding">$200+</b> in member bonuses </p>
                   </li>
                 </ul>
@@ -139,14 +142,14 @@
 
               <!--<h3 class="text-o m-t-lg text-center">Congrats! Your customized {{vm.metabolic_type.name}} plan is ready!</h3>-->
               <p class="txt-center sm-txt">Fill out the form below and get access to your account</p>
-              <img src="images/bread2.png" class="center visible-lg-block visible-md-block visible-md-block" style="margin: 0 auto;margin-bottom: 20px;">
+              <img data-src="images/bread2.png" class="center visible-lg-block visible-md-block visible-md-block" style="margin: 0 auto;margin-bottom: 20px;">
 
               <div class="price-wrap1">
                 <h4><b>Order Summary</b></h4>
                 <div class="shopping-cart">
                   <div class="product">
                     <div class="product-image">
-                      <img src="./images/imgl1/pic-1-1.jpg">
+                      <img data-src="./images/imgl1/pic-1-1.jpg">
                     </div>
                     <div class="product-details">
                       <div class="product-title"><span style="color: #0493cb;">G-Plans Nutrition System</span>
@@ -380,7 +383,7 @@
 
                               </div>
                               <!--4xs-->
-                              <img src="images/verif-1.png" class="right" style="margin-top: -15px; width: inherit;">
+                              <img data-src="images/verif-1.png" class="right" style="margin-top: -15px; width: inherit;">
                             </div>
                             <!--rowcc-->
 
@@ -399,7 +402,7 @@
                     </div>
                   </div>
                 </div>
-                <img src="images/imgl1/checkout-secure1.png" style="max-width:100%">
+                <img data-src="images/imgl1/checkout-secure1.png" style="max-width:100%">
               </div>
               <!-- end ngIf: vm.plan && !vm.orderSuccess -->
 
@@ -410,19 +413,19 @@
                   <div class="side-test">
                     "After I found out I was <b class="ng-binding"></b>, I just followed Dr.G’s plan for my body...<b class="ng-binding">I lost 15 lbs in the first 2 months</b>...and still going!"
                     <sup> *</sup><br>
-                    <img src="./images/test1.png" class="desk-test"> Judy M.<br><span>3rd grade teacher</span>
+                    <img data-src="./images/test1.png" class="desk-test"> Judy M.<br><span>3rd grade teacher</span>
                   </div>
 
                   <div class="side-test m-t" style="margin-top:10px !important">
                     "It is amazing that eating for my <b class="ng-binding"></b> body, made such a HUGE difference for my weight. <b class="ng-binding">My digestive issues are totally gone and I lost 8 lbs  within the first month</b>"<sup> *</sup><br>
-                    <img src="./images/test2.png" class="desk-test"> Sarah T.<br><span class="occ">Accountant</span>
+                    <img data-src="./images/test2.png" class="desk-test"> Sarah T.<br><span class="occ">Accountant</span>
                   </div>
 
                   <div class="side-test m-t m-b" style="margin-top:10px !important;">
                     "At first I have to admit, I had my doubts… I took the quiz and was diagnosed as
                     <b class="ng-binding">.
 								But the proof is in the results. Down 12 lbs
-								already! Thanks G-Plans.</b>"<sup *<="" sup=""><br><img src="./images/test3.png" class="desk-test">Tim R.<br><span class="occ">Postal Service Worker<span></sup></div>
+								already! Thanks G-Plans.</b>"<sup *<="" sup=""><br><img data-src="./images/test3.png" class="desk-test">Tim R.<br><span class="occ">Postal Service Worker<span></sup></div>
                   <li class="s-i-1"><span class="li-head">100% Money Back GUARANTEE</span> You have a full 30 days to preview. If you decide during that time that it's not right for you, just let us know and you'll be issued a full and prompt refund, no questions asked.
                     In short, you get a great return on your investment, or you get your money back.
                   </li>
@@ -436,7 +439,7 @@
                   <li class="s-i-4"><span class="li-head">Need Help?</span> Contact Us 9AM - 5PM PST Monday - Friday support@g-plans.com
                   </li>
 
-                  <li class="s-i-5"><img src="images/imgl1/ssl123.png"></li>
+                  <li class="s-i-5"><img data-src="images/imgl1/ssl123.png"></li>
                 </ul>
               </div>
 
@@ -462,14 +465,9 @@
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-      WebFont.load({
-        google: {
-          families: ['Open Sans', 'Roboto']
-        }
-      });
-    </script>
+    <!-- IntersectionObserver polyfill -->
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js" async></script>
+
 </body>
 
 </html>
