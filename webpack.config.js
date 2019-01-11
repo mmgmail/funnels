@@ -27,6 +27,7 @@ const common = merge([
       'question': PATHS.source + '/pages/question/question.js',
       'start': PATHS.source + '/pages/start/start.js',
       'payment-ss': PATHS.source + '/pages/payment-ss/payment-ss.js',
+      'payment-retargeted': PATHS.source + '/pages/payment-retargeted/payment-retargeted.js',
     },
     output: {
       path: PATHS.build,
@@ -56,6 +57,11 @@ const common = merge([
         filename: 'payment-ss.html',
         chunks: ['payment-ss', 'common'],
         template: PATHS.source + '/pages/payment-ss/payment-ss.html',
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'payment-retargeted.html',
+        chunks: ['payment-retargeted', 'common'],
+        template: PATHS.source + '/pages/payment-retargeted/payment-retargeted.html',
       }),
       new CopyWebpackPlugin([
   			{from: 'images', to: 'images'},
@@ -137,6 +143,19 @@ module.exports = function(env, argv) {
             base: path.resolve(__dirname, 'build'),
             src: 'payment-ss.html',
             dest: 'payment-ss.html',
+            inline: true,
+            minify: true,
+            extract: true,
+            width: 375,
+            height: 565,
+            penthouse: {
+              blockJSRequests: false,
+            }
+          }),
+          new HtmlCriticalWebpackPlugin({
+            base: path.resolve(__dirname, 'build'),
+            src: 'payment-retargeted.html',
+            dest: 'payment-retargeted.html',
             inline: true,
             minify: true,
             extract: true,

@@ -1,0 +1,475 @@
+<html ng-app="gplans" class="ng-scope">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <!-- <meta content="width=device-width, initial-scale=1" name="viewport"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="" name="author">
+  <title ng-bind="pageTitle + ' | G-Plan'" class="ng-binding">Survey | G-Plan</title>
+
+  <!-- FAVICONS -->
+
+  <meta name="application-name" content="&nbsp;">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <!-- END FAVICONS -->
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+</head>
+
+<body>
+
+  <div ui-view="" class="init-ui-view ng-scope">
+    <!-- uiView: -->
+    <div class="ui-view ng-scope">
+
+      <!-- ngInclude: -->
+      <div class="ng-scope" src="'templates/survey/hurry-timer-retarget.html'">
+        <!-- ngIf: !vm.alreadySubscribed -->
+        <div ng-if="!vm.alreadySubscribed" style="position:relative; background-color:#ffd300; padding-top:5px;" class="ng-scope">
+          <div class="container" style="background:none; box-shadow:none;">
+            <p class="text-center --text-uppercase" style="font-size: 14px; color: #555555; margin: 5px 0 10px 0; max-width: 100%; vertical-align: middle;">
+              <img src="images/imgl1/alert123.png" class="hidden-xs" alt="" width="28">
+
+              <b>Welcome Back!!!</b> Your quiz results and fat burning program have been saved for you on our servers. All you have to do if take the next step and join us!
+
+              <b>Join us today &amp; we'll throw in Dr. Goglia's full
+              <big class="badge red">Power Bundle  (valued at $99) absolutely FREE!</big></b>
+            </p>
+            <img src="./images/timer-image.png" style="margin: 0 auto;display: block;">
+          </div>
+        </div>
+        <!-- end ngIf: !vm.alreadySubscribed -->
+      </div>
+
+      <div class="container ng-scope">
+
+        <div class="row">
+          <img src="images/side-bar-4@2x.png" class="width-100 visible-xs-block">
+          <div class="right-col-checkout check-form-wrap col-sm-4 summary-1 col-sm-push-8">
+
+            <ul class="checkout-side-bar p-a hidden-xs">
+              <li class="s-i-1"><span class="li-head">100% Money Back GUARANTEE</span> You have a full 30 days to preview. If you decide during that time that it's not right for you, just let us know and you'll be issued a full and prompt refund, no questions asked. In
+                short, you get a great return on your investment, or you get your money back.
+              </li>
+
+              <li class="s-i-2"><span class="li-head">Your Information is Safe</span> We will not sell or rent your personal contact information for any marketing purposes whatsoever.
+              </li>
+
+              <li class="s-i-3"><span class="li-head">Secure Checkout</span> All information is encrypted and transmitted without risk using a Secure Sockets Layer protocol.
+              </li>
+
+              <li class="s-i-4"><span class="li-head">Need Help?</span> Contact Us 9AM - 5PM PST Monday - Friday support@g-plans.com
+              </li>
+
+              <hr>
+              <h3 class="center test-head1 ng-binding">Recent  Success Stories</h3>
+              <div class="side-test">
+                "After I found out I was <b class="ng-binding"></b>, I just followed Dr.G’s plan for my body...
+                <b class="ng-binding">I lost 15 lbs in the first 2 months</b>...and still going!"<sup> *</sup><br>
+                <img src="./images/test1.png" class="desk-test"> Judy M.<br><span>3rd grade teacher</span>
+              </div>
+
+              <div class="side-test m-t">
+                "It is amazing that eating for my <b class="ng-binding"></b> body, made such a HUGE difference for my weight. <b class="ng-binding">My digestive issues are totally gone and I lost 8 lbs within the first month</b>"<sup> *</sup><br>
+                <img src="./images/test2.png" class="desk-test"> Sarah T.<br><span class="occ">Accountant</span>
+              </div>
+
+              <div class="side-test m-t">
+                "At first I have to admit, I had my doubts… I took the quiz and was diagnosed as
+                <b class="ng-binding">. But the proof is in the results. Down 12 lbs already! Thanks G-Plans.</b>"<sup> *</sup><br>
+                <img src="./images/test3.png" class="desk-test"> Tim R.<br><span class="occ">Postal Service Worker</span>
+              </div>
+
+            </ul>
+          </div>
+          <!--col4-->
+
+          <!-- ngIf: !vm.alreadySubscribed -->
+          <div ng-if="!vm.alreadySubscribed" class="col-sm-8 mobile-no-pad bg-wrap-1 col-sm-pull-4 ng-scope">
+            <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+            <form id="vm.paymentForm" name="vm.paymentForm" ng-submit="vm.submit()" class="ng-pristine ng-invalid ng-invalid-required ng-invalid-cc-number ng-invalid-cc-number-type ng-invalid-cc-cvc ng-invalid-cc-exp-month ng-invalid-cc-exp-year ng-invalid-cc-exp">
+              <!-- ngIf: !vm.plan || vm.orderSubmitting -->
+              <!-- ngIf: vm.orderSuccess -->
+
+              <!-- New Block -->
+              <div class="new">
+                <h3 class="text-o m-t text-center ng-binding">THOUSANDS of Clients. 150,000+ Pounds Lost. ... It’s Your Turn!<sup>*</sup></h3>
+                <img src="images/comback_to_sale/users.png" class="m-t center" width="100%" vspace="10">
+
+                <h3 class="text-o m-t text-center ng-binding">Here’s Your  Metabolic Plan Targeting 0 Pounds of Weight Loss! ZERO Risk. Results Guaranteed.</h3>
+
+                <h4 class="list-group-header m-t-md"><span>Your plan includes</span></h4>
+                <ul class="list-group">
+                  <li><img src="images/comback_to_sale/plan-icon-1.svg" alt="" width="50" height="50">
+                    <p><b>7-day metabolic meal plans</b>, updated weekly</p>
+                  </li>
+                  <li><img src="images/comback_to_sale/plan-icon-2.svg" alt="" width="50" height="50">
+                    <p>“<b>Love what you eat</b>” easy-swap system</p>
+                  </li>
+                  <li><img src="images/comback_to_sale/plan-icon-3.svg" alt="" width="50" height="50">
+                    <p><b>No points</b>, no counting simplicity</p>
+                  </li>
+                  <li><img src="images/comback_to_sale/plan-icon-4.svg" alt="" width="50" height="50">
+                    <p><b>Motivational tracking tools</b>, web + mobile app</p>
+                  </li>
+                  <li><img src="images/comback_to_sale/plan-icon-5.svg" alt="" width="50" height="50">
+                    <p><b>Weekly video</b> coaching from me! </p>
+                  </li>
+                  <li><img src="images/comback_to_sale/plan-icon-6.svg" alt="" width="50" height="50">
+                    <p><b>Fitness plan</b> <span class="text-muted">(optional freebie)</span></p>
+                  </li>
+                  <li><img src="images/comback_to_sale/plan-icon-7.svg" alt="" width="50" height="50">
+                    <p><b class="ng-binding">$200+</b> in member bonuses </p>
+                  </li>
+                </ul>
+
+                <h4 class="text-o m-t-md ng-binding">Truly risk free.</h4>
+                <p class="m-t ng-binding">End the battle with your metabolism for good! Lose weight... feel more energized... sleep better... lose inches off your waistline... and enjoy an elevated mood level, or get your money back (no questions asked). In fact, getting a refund
+                  is quick and easy – just email support@g-plans.com</p>
+
+                <h4 class="text-o m-t ng-binding">Price protected!</h4>
+                <p class="m-t">Our prices are set to grow as our membership grows. Lock in today before that happens at the lowest price we’ve ever offered. Don’t wait... join us today!</p>
+
+              </div>
+              <!-- End New Block  -->
+
+              <!--<h3 class="text-o m-t-lg text-center">Congrats! Your customized {{vm.metabolic_type.name}} plan is ready!</h3>-->
+              <p class="txt-center sm-txt">Fill out the form below and get access to your account</p>
+              <img src="images/bread2.png" class="center visible-lg-block visible-md-block visible-md-block" style="margin: 0 auto;margin-bottom: 20px;">
+
+              <div class="price-wrap1">
+                <h4><b>Order Summary</b></h4>
+                <div class="shopping-cart">
+                  <div class="product">
+                    <div class="product-image">
+                      <img src="./images/imgl1/pic-1-1.jpg">
+                    </div>
+                    <div class="product-details">
+                      <div class="product-title"><span style="color: #0493cb;">G-Plans Nutrition System</span>
+                      </div>
+                      <p class="product-description ng-binding">Get full access to your G-Plans Nutrition System. Updated weekly to ensure optimal progress for your exact body and goals.</p>
+                    </div>
+
+                  </div>
+
+                  <div class="price-wrap p-b">
+                    <div class="reg-price m-t">
+                      Reg Price: <span class="right ng-binding">$860</span>
+                    </div>
+                    <div class="discount-price">
+                      Your Total Today: <span class="right ng-binding" style="color:green;">$39</span>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+              <!--price-wrap-->
+
+              <!-- ngIf: vm.plan && !vm.orderSuccess -->
+              <div ng-if="vm.plan &amp;&amp; !vm.orderSuccess" ng-hide="vm.orderSubmitting" class="check-form-wrap fq-container p-b m-b ng-scope">
+
+                <!-- ngIf: vm.week_trial -->
+                <div class="custom-pay-tab row">
+                  <div ng-init="selectedTab = 0" class="ng-isolate-scope">
+                    <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" ng-transclude="">
+
+                      <li ng-class="{active: active, disabled: disabled}" select="selectedTab = 1" class="tablinks active" onclick="openTabs(event, 'creditCard')">
+                        <a href="#!" ng-click="select()" class="ng-binding">
+                          <div class="ng-scope">
+                            <i class="fa fa-credit-card" aria-hidden="true"></i>Credit Card
+                          </div>
+                        </a>
+                      </li>
+
+                      <li ng-class="{active: active, disabled: disabled}" select="selectedTab = 2" class="tablinks" onclick="openTabs(event, 'payPal')">
+                        <a href="#!" ng-click="select()" class="ng-binding">
+                          <div class="ng-scope">
+                            <i class="fa fa-paypal" aria-hidden="true"></i>PayPal
+                          </div>
+                        </a>
+                      </li>
+
+                    </ul>
+                    <div class="tab-content">
+                      <!-- ngRepeat: tab in tabs -->
+                      <div id="creditCard" class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
+
+                        <div class="clearfix ng-scope">
+                          <label for="first_name">Card Holder Name</label>
+                          <div class="form-group">
+                            <div class="col-md-6 form-group col-xs-6 p-l-0" style="padding-left: 0;">
+                              <input class="form-control required ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="first_name" placeholder="First Name" required="" ng-model="vm.customer.first_name" id="first_name" type="text">
+                              <!-- ngIf: vm.showValidation || vm.paymentForm.first_name.$touched -->
+                            </div>
+                            <div class="col-md-6 form-group col-xs-6 p-r-0" style="padding-left: 0;">
+                              <input class="form-control required ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="" name="last_name" placeholder="Last Name" ng-model="vm.customer.last_name" id="last_name" type="text">
+
+                              <!-- ngIf: vm.showValidation || vm.paymentForm.last_name.$touched -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="clearfix ng-scope">
+                          <div class="form-group" style="clear: both;">
+                            <label>Credit Card Information</label>
+                            <div class="controls">
+                              <input class="form-control required creditcard ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-invalid-cc-number ng-invalid-cc-number-type" id="cc_number" cc-number="" cc-type="cardType" ng-required="true" required="required" autocomplete="off" type="text" placeholder="Credit Card Number" name="cc_number" ng-model="vm.order.cc_number" style="background: url(./images/sprite2.png) right -591px no-repeat;" ng-change="vm.paymentForm.cc_number.$setValidity('stripeToken', true)"
+                                pattern="[0-9 ]*" x-autocompletetype="cc-number">
+
+                              <!-- ngIf: vm.showValidation || vm.paymentForm.cc_number.$touched -->
+
+                              <div class="credit-cards">
+                                <div class="discover"></div>
+                                <div class="amex"></div>
+                                <div class="visa"></div>
+                                <div class="mc"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="clearfix ng-scope">
+                          <div class="form-group relative col-xs-6 p-l-0">
+                            <!--<label>Security Code</label>-->
+                            <div class="controls">
+                              <input class="form-control pull-left required number  ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-cc-cvc" id="cvv" type="text" ng-model="vm.order.cvv" cc-cvc="" name="cvv" placeholder="CVV" cc-type="vm.paymentForm.cc_number.$ccType" style="background: url(./images/sprite2.png) right -591px no-repeat;"
+                                maxlength="4" pattern="[0-9]*" x-autocompletetype="cc-csc">
+                              <!-- ngIf: vm.showValidation || vm.paymentForm.cvv.$touched -->
+                            </div>
+                          </div>
+                          <div class="col-xs-6 p-l-0">
+                            <a popover-placement="top" uib-popover-html="vm.popoverContent" type="button" class="btn btn-link small what-is-cvv" style="padding: 0px; margin-top: 10px">What's This?</a>
+                          </div>
+                        </div>
+
+                        <div class="clearfix ng-scope">
+                          <!-- <label for="card-number">Card Expiration</label>-->
+                          <div class="form-group">
+
+                            <div class="" cc-exp="">
+                              <div class="col-xs-6 p-l-0 form-group">
+                                <select class="required number form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-cc-exp-month" cc-exp-month="" name="ccExpMonth" ng-model="vm.order.expiration.month" id="ccExpMonth" maxlength="2" pattern="[0-9]*" x-autocompletetype="cc-exp-month">
+        													<option value="" selected="selected">
+        														MM
+        													</option>
+        													<option value="01">
+        														01 - Jan
+        													</option>
+        													<option value="02">
+        														02 - Feb
+        													</option>
+        													<option value="03">
+        														03 - Mar
+        													</option>
+        													<option value="04">
+        														04 - Apr
+        													</option>
+        													<option value="05">
+        														05 - May
+        													</option>
+        													<option value="06">
+        														06 - Jun
+        													</option>
+        													<option value="07">
+        														07 - Jul
+        													</option>
+        													<option value="08">
+        														08 - Aug
+        													</option>
+        													<option value="09">
+        														09 - Sep
+        													</option>
+        													<option value="10">
+        														10 - Oct
+        													</option>
+        													<option value="11">
+        														11 - Nov
+        													</option>
+        													<option value="12">
+        														12 - Dec
+        													</option>
+        												</select>
+
+                                <!-- ngIf: vm.showValidation || vm.paymentForm.ccExpMonth.$touched -->
+
+                              </div>
+                              <div class="col-xs-6 p-r-0 p-l-0 form-group">
+                                <select class="required number form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-cc-exp-year" cc-exp-year="" name="ccExpYear" ng-model="vm.order.expiration.year" id="ccExpYear" maxlength="2" pattern="[0-9]*" x-autocompletetype="cc-exp-year">
+        													<option value="" selected="selected">
+        														YYYY
+        													</option>
+        													<option value="18">
+        														2018
+        													</option>
+        													<option value="19">
+        														2019
+        													</option>
+        													<option value="20">
+        														2020
+        													</option>
+        													<option value="21">
+        														2021
+        													</option>
+        													<option value="22">
+        														2022
+        													</option>
+        													<option value="23">
+        														2023
+        													</option>
+        													<option value="24">
+        														2024
+        													</option>
+        													<option value="25">
+        														2025
+        													</option>
+        													<option value="26">
+        														2026
+        													</option>
+        													<option value="27">
+        														2027
+        													</option>
+        													<option value="28">
+        														2028
+        													</option>
+        													<option value="29">
+        														2029
+        													</option>
+        													<option value="30">
+        														2030
+        													</option>
+        													<option value="31">
+        														2031
+        													</option>
+        													<option value="32">
+        														2032
+        													</option>
+        													<option value="33">
+        														2033
+        													</option>
+        													<option value="34">
+        														2034
+        													</option>
+        													<option value="35">
+        														2035
+        													</option>
+        													<option value="36">
+        														2036
+        													</option>
+        													<option value="37">
+        														2037
+        													</option>
+        													<option value="38">
+        														2038
+        													</option>
+        													<option value="39">
+        														2039
+        													</option>
+        													<option value="40">
+        														2040
+        													</option>
+        													<option value="41">
+        														2041
+        													</option>
+        												</select>
+
+                                <!-- ngIf: vm.showValidation || vm.paymentForm.ccExpYear.$touched -->
+
+                              </div>
+                              <!--4xs-->
+                              <img src="images/verif-1.png" class="right" style="margin-top: -15px; width: inherit;">
+                            </div>
+                            <!--rowcc-->
+
+                          </div>
+                          <!--form-group-->
+                        </div>
+
+                        <button formnovalidate="" class="btn btn-danger btn-block btn-large m-b ng-scope" style=" margin-top: 10px;line-height: 100%;" type="submit">Complete Sign Up</button>
+
+                      </div>
+                      <!-- end ngRepeat: tab in tabs -->
+                      <div id="payPal" class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
+                        <button>PayPal Button</button>
+                      </div>
+                      <!-- end ngRepeat: tab in tabs -->
+                    </div>
+                  </div>
+                </div>
+                <img src="images/imgl1/checkout-secure1.png" style="max-width:100%">
+              </div>
+              <!-- end ngIf: vm.plan && !vm.orderSuccess -->
+
+              <div class="right-col-checkout">
+                <ul class="checkout-side-bar p-a visible-xs-block m-t">
+
+                  <h3 class="center test-head1 ng-binding">Recent  Success Stories</h3>
+                  <div class="side-test">
+                    "After I found out I was <b class="ng-binding"></b>, I just followed Dr.G’s plan for my body...<b class="ng-binding">I lost 15 lbs in the first 2 months</b>...and still going!"
+                    <sup> *</sup><br>
+                    <img src="./images/test1.png" class="desk-test"> Judy M.<br><span>3rd grade teacher</span>
+                  </div>
+
+                  <div class="side-test m-t" style="margin-top:10px !important">
+                    "It is amazing that eating for my <b class="ng-binding"></b> body, made such a HUGE difference for my weight. <b class="ng-binding">My digestive issues are totally gone and I lost 8 lbs  within the first month</b>"<sup> *</sup><br>
+                    <img src="./images/test2.png" class="desk-test"> Sarah T.<br><span class="occ">Accountant</span>
+                  </div>
+
+                  <div class="side-test m-t m-b" style="margin-top:10px !important;">
+                    "At first I have to admit, I had my doubts… I took the quiz and was diagnosed as
+                    <b class="ng-binding">.
+								But the proof is in the results. Down 12 lbs
+								already! Thanks G-Plans.</b>"<sup *<="" sup=""><br><img src="./images/test3.png" class="desk-test">Tim R.<br><span class="occ">Postal Service Worker<span></sup></div>
+                  <li class="s-i-1"><span class="li-head">100% Money Back GUARANTEE</span> You have a full 30 days to preview. If you decide during that time that it's not right for you, just let us know and you'll be issued a full and prompt refund, no questions asked.
+                    In short, you get a great return on your investment, or you get your money back.
+                  </li>
+
+                  <li class="s-i-2"><span class="li-head">Your Information is Safe</span> We will not sell or rent your personal contact information for any marketing purposes whatsoever.
+                  </li>
+
+                  <li class="s-i-3"><span class="li-head">Secure Checkout</span> All information is encrypted and transmitted without risk using a Secure Sockets Layer protocol.
+                  </li>
+
+                  <li class="s-i-4"><span class="li-head">Need Help?</span> Contact Us 9AM - 5PM PST Monday - Friday support@g-plans.com
+                  </li>
+
+                  <li class="s-i-5"><img src="images/imgl1/ssl123.png"></li>
+                </ul>
+              </div>
+
+              <p class="m-t p-b extra-txt">
+                * Your Goglia Nutrition membership will begin when you have completed the sign-up process. If you cancel your membership anytime in the first 30 days after you sign up, you will not be charged. To cancel, click on the “Account Settings” tab on our website
+                and then click on "Manage Subscriptions" and follow the instructions -- or simply email us at support@g-plans.com If you do not cancel within the first 30 days you will be charged again in full about every 30 days after that until you
+                cancel. No refunds or credits for partial months. See Terms of Service for more details.
+              </p>
+              <p class="text-asterix">* Results vary based on starting weight and program adherence. Inches lost from hips, waist, chest, thighs and arms in first month. These users exercised daily and ate a reduced-calorie diet. Their fat loss is not typical.</p>
+            </form>
+
+            <div class="hidden-phone pad-bottom"></div>
+          </div>
+          <!-- end ngIf: !vm.alreadySubscribed -->
+          <!--col9-->
+          <!-- ngIf: vm.alreadySubscribed -->
+          <!--col9-->
+
+        </div>
+        <!--row-->
+      </div>
+      <!--container-->
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Open Sans', 'Roboto']
+        }
+      });
+    </script>
+</body>
+
+</html>
