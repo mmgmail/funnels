@@ -21,12 +21,12 @@ const PATHS = {
   build: path.join(__dirname, 'build'),
 };
 const common = merge([
-  images(),
   {
     entry: {
       'index': PATHS.source + '/pages/index/index.js',
       'question': PATHS.source + '/pages/question/question.js',
       'start': PATHS.source + '/pages/start/start.js',
+      'payment-ss': PATHS.source + '/pages/payment-ss/payment-ss.js',
     },
     output: {
       path: PATHS.build,
@@ -52,9 +52,14 @@ const common = merge([
         chunks: ['start', 'common'],
         template: PATHS.source + '/pages/start/start.html',
       }),
+      new HtmlWebpackPlugin({
+        filename: 'payment-ss.html',
+        chunks: ['payment-ss', 'common'],
+        template: PATHS.source + '/pages/payment-ss/payment-ss.html',
+      }),
       new CopyWebpackPlugin([
-  			{from: 'source/pages/**/images/*', to: 'images', flatten: true},
-  			{from: 'source/pages/**/fonts/*', to: 'fonts', flatten: true},
+  			{from: 'images', to: 'images'},
+  			{from: 'fonts', to: 'fonts'},
   		],{
   			copyUnmodified: true,
   		}),
@@ -76,6 +81,7 @@ const common = merge([
   },
   // lintJS({ paths: PATHS.sources }),
   lintCSS(),
+  images(),
   babel(),
 ]);
 
@@ -127,11 +133,24 @@ module.exports = function(env, argv) {
               blockJSRequests: false,
             }
           }),
+          new HtmlCriticalWebpackPlugin({
+            base: path.resolve(__dirname, 'build'),
+            src: 'payment-ss.html',
+            dest: 'payment-ss.html',
+            inline: true,
+            minify: true,
+            extract: true,
+            width: 375,
+            height: 565,
+            penthouse: {
+              blockJSRequests: false,
+            }
+          }),
         ],
       },
       common,
       extractCSS(),
-      favicon(),
+      // favicon(),
     ]);
   }
   if (argv.mode === 'development') {

@@ -7,7 +7,7 @@ module.exports = function() {
           test: /\.(png|jpg|svg|gif|ico|eot|ttf|woff|woff2|otf)$/,
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
+            name: 'images/[name].[ext]',
           },
         },
       ],

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg x="0px" y="0px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1, 0, 0, 1, 0, -953.362183)">
+    <g transform="translate(9.9999994e-8,-1.0000099)">
+      <path style="font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; font-stretch: normal; text-indent: 0px; text-align: start; text-decoration: none; line-height: normal; letter-spacing: normal; word-spacing: normal; text-transform: none; direction: ltr; writing-mode: lr-tb; text-anchor: start; baseline-shift: baseline; opacity: 1; color: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 2; marker: none; visibility: visible; display: inline; overflow: visible; font-family: Sans; fill: rgb(252, 104, 1);" d="m 50,979.36219 c -2.749579,0 -5,2.25042 -5,5 0,2.40587 1.727252,4.43791 4,4.90625 l 0,4.125 c -19.116729,0.46569 -34.507041,14.11666 -35.9375,31.96876 l -5.0625004,0 c -0.735523,0 -0.997,0.5316 -1,1 -0.003,0.4744 0.474104,1 1,1 l 84.0000004,0 c 0.528365,0 1.003039,-0.5256 1,-1 -0.003,-0.4684 -0.471635,-1 -1,-1 l -5.0625,0 C 85.50707,1007.5101 70.116751,993.85913 51,993.39344 l 0,-4.125 c 2.272748,-0.46834 4,-2.50038 4,-4.90625 0,-2.74958 -2.250421,-5 -5,-5 z m 0,2 c 1.668699,0 3,1.3313 3,3 0,1.66869 -1.331301,3 -3,3 -1.668699,0 -3,-1.33131 -3,-3 0,-1.6687 1.331301,-3 3,-3 z m 0,14 c 18.584271,0 33.392419,12.98051 34.84375,30.00001 l -69.6875,0 C 16.607608,1008.3427 31.415753,995.36219 50,995.36219 z"/>
+    </g>
+  </g>
+</svg>

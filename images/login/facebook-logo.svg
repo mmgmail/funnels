@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="39px" viewBox="0 0 23 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="34.84375%" x2="50%" y2="86.3359375%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E4E4E4" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-2.7%" y="-3.6%" width="105.4%" height="111.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.0405505952   0 0 0 0 0.0405505952   0 0 0 0 0.0405505952  0 0 0 0.344429348 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="WEB-Dash2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" fill="#FFFFFF">
+            <g id="Group-3">
+                <g id="Group">
+                    <g id="Sign-in-button-Copy" filter="url(#filter-2)">
+                        <path d="M9.47390496,0.00355164887 L7.11253202,0 C4.45992387,0 2.7451878,1.7590133 2.7451878,4.48099699 L2.7451878,6.5473463 L0.370792142,6.5473463 C0.166453944,6.5473463 0,6.71285314 0,6.91813844 L0,9.91217843 C0,10.1165166 0.166453944,10.2829706 0.370792142,10.2829706 L2.7451878,10.2829706 L2.7451878,17.8368542 C2.7451878,18.0411924 2.91164174,18.2076463 3.11692705,18.2076463 L6.2134913,18.2076463 C6.41877661,18.2076463 6.58523055,18.0411924 6.58523055,17.8368542 L6.58523055,10.2829706 L9.36096253,10.2829706 C9.56624784,10.2829706 9.73199145,10.1165166 9.73199145,9.91217843 L9.73364889,6.91813844 C9.73364889,6.82011293 9.69387042,6.72587585 9.62449488,6.6555532 C9.55511934,6.58617766 9.46088225,6.5473463 9.36190964,6.5473463 L6.58523055,6.5473463 L6.58523055,4.79567308 C6.58523055,3.9539323 6.7860171,3.52655055 7.88205594,3.52655055 L9.47295786,3.52560344 C9.67824316,3.52560344 9.84375,3.3591495 9.84375,3.1548113 L9.84375,0.375527674 C9.84375,0.170005592 9.67824316,0.00449875523 9.47390496,0.00355164887 Z" id="facebook-logo"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
