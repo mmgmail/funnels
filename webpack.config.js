@@ -53,8 +53,8 @@ const common = merge([
         template: PATHS.source + '/pages/start/start.html',
       }),
       new CopyWebpackPlugin([
-  			{from: 'source/pages/**/images/*.*', to: 'images', flatten: true},
-  			{from: 'source/pages/**/fonts/*.*', to: 'fonts', flatten: true},
+  			{from: 'source/pages/**/images/*', to: 'images', flatten: true},
+  			{from: 'source/pages/**/fonts/*', to: 'fonts', flatten: true},
   		],{
   			copyUnmodified: true,
   		}),
