@@ -1,2 +1,2 @@
-import './question.css';
-import './question.scss';
+import '../../../css/index.css';
+import '../../../scss/question.scss';

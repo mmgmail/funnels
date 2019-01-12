@@ -1,7 +1,7 @@
 import lazy from '../../components/lazy';
 import tabs from '../../components/tabs';
-import './index.css';
-import './main.scss';
+import '../../../css/index.css';
+import '../../../scss/payment-ss.scss';
 
 lazy();
 tabs();

@@ -1,2 +1,0 @@
-[Mon Jan 25 2016 14:27:33 GMT-0800 (PST)] layer "Dr.Goglia Icons": Expected end of input but "I" found.
-[Mon Jan 25 2016 14:27:33 GMT-0800 (PST)] layer "1st-lb.png copy 7": Expected end of input but "c" found.

@@ -1,1 +1,0 @@
-[Sat Dec 17 2016 12:20:21 GMT-0800 (PST)] layer "l2.png": Duplicate path: l2.png

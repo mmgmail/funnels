@@ -1,4 +1,0 @@
-[Sun Sep 18 2016 14:48:34 GMT-0700 (PDT)] layer "evans.png  copy": Expected end of input but "c" found.
-[Sun Sep 18 2016 14:48:34 GMT-0700 (PDT)] layer "evans.png  copy 2": Expected end of input but "c" found.
-[Sun Sep 18 2016 14:48:34 GMT-0700 (PDT)] layer "bennet.png": Duplicate path: bennet.png
-[Sun Sep 18 2016 14:48:46 GMT-0700 (PDT)] layer "bennet.png copy": Expected end of input but "c" found.
